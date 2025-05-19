@@ -1,4 +1,6 @@
 ---
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
 import "@styles/global.css";
 
 type Props = {
@@ -14,9 +16,13 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>La Iglesia de Cristo{title ? ` | ${title}` : ""}</title>
+    <title>{title || "La Iglesia de Cristo"}</title>
   </head>
-  <body>
-    <slot />
+  <body class="flex flex-col min-h-dvh bg-neutral-50 text-neutral-800">
+    <Header />
+    <main class="container mx-auto grow-[1] p-4 md:px-0 md:py-10">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

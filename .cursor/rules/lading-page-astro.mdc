@@ -1,0 +1,6 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+Necesito que todas las sugerencias que me den sean para Astro, con typescript, considerando que soy un programador front end semi senio, que no tiene mucha experiencia trabajando con Astro, quiero construir una landing page sencilla pero bien estructurada y que sea facil de entender para los usuarios

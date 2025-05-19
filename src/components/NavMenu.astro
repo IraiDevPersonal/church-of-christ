@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+import NavList from "./NavList.astro";
+---
+
+<div class="md:hidden">
+  <button
+    class="hover:bg-neutral-800 transition-colors p-2 rounded-md cursor-pointer"
+  >
+    <Icon name="menu-icon" size={24} />
+  </button>
+  <div
+    class="absolute top-0 right-0 z-10 bg-neutral-50 text-neutral-900 p-4 h-dvh w-80 space-y-8 shadow-lg"
+  >
+    <div>
+      <h3 class="text-lg font-semibold">Menú</h3>
+    </div>
+    <NavList shouldDefaultHidden={false} className="flex-col w-max" />
+  </div>
+</div>

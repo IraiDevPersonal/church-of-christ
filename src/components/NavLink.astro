@@ -1,0 +1,12 @@
+---
+type Props = {
+  to: string;
+  className?: string;
+};
+
+const { to, className } = Astro.props;
+---
+
+<a href={to} class:list={["w-max hover:bg-red-400", className]}>
+  <slot />
+</a>

@@ -1,0 +1,22 @@
+---
+import NavLink from "./NavLink.astro";
+
+type Props = {
+  className?: string;
+  shouldDefaultHidden?: boolean;
+};
+
+const { className, shouldDefaultHidden = true } = Astro.props;
+---
+
+<nav
+  class:list={[
+    shouldDefaultHidden ? "hidden md:flex items-center" : "flex",
+    "gap-4 w-full",
+    className,
+  ]}
+>
+  <NavLink to="/articulos">Artículos</NavLink>
+  <NavLink to="/musica">Música</NavLink>
+  <NavLink to="/sobre-nosotros">Sobre Nosotros</NavLink>
+</nav>
