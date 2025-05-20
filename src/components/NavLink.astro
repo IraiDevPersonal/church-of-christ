@@ -7,6 +7,12 @@ type Props = {
 const { to, className } = Astro.props;
 ---
 
-<a href={to} class:list={["w-max hover:bg-red-400", className]}>
+<a
+  href={to}
+  class:list={[
+    "w-full md:w-max rounded-md hover:bg-neutral-800 transition-colors p-2 font-semibold",
+    className,
+  ]}
+>
   <slot />
 </a>
