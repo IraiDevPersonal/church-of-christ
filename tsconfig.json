@@ -25,6 +25,9 @@
       "@utils/*": [
         "src/utils/*"
       ],
+      "@scripts/*": [
+        "src/scripts/*"
+      ]
     }
   }
 }

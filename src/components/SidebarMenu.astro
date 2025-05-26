@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import { LINKS } from "src/libs/const";
+import NavLink from "./NavLink.astro";
+---
+
+<aside
+  id="sidebar-menu"
+  data-open="true"
+  class="md:hidden absolute top-0 left-full z-10 bg-neutral-50 text-neutral-900 p-4 h-dvh w-80 space-y-8 shadow-lg transition-transform data-[open=true]:-translate-x-80 border-l border-neutral-200"
+>
+  <div class="flex gap-2 items-center">
+    <button
+      id="close-menu-btn"
+      class="hover:bg-neutral-200 transition-colors p-1.5 rounded-md cursor-pointer"
+    >
+      <Icon name="close-icon" size={24} />
+    </button>
+    <h3 class="text-lg font-semibold">Menú</h3>
+  </div>
+
+  <nav>
+    <ul>
+      {
+        LINKS.map(({ to, label }) => (
+          <li>
+            <NavLink href={to}>{label}</NavLink>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  import { $ } from "@utils/$";
+
+  const root = $<HTMLBodyElement>("#root");
+  const sidebar = $<HTMLDivElement>("#sidebar-menu");
+  const openBtn = $<HTMLButtonElement>("#open-menu-btn");
+  const closeBtn = $<HTMLButtonElement>("#close-menu-btn");
+
+  const isOpen = () => sidebar?.getAttribute("data-open") === "true";
+
+  const handleToggle = (value?: string) => (e: MouseEvent) => {
+    e.stopPropagation();
+    sidebar?.setAttribute("data-open", value ?? `${!isOpen()}`);
+  };
+
+  if (openBtn && closeBtn && root && sidebar) {
+    openBtn.addEventListener("click", handleToggle());
+    closeBtn.addEventListener("click", handleToggle());
+    root.addEventListener("click", handleToggle("false"));
+    sidebar.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+</script>

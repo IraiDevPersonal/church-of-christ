@@ -3,22 +3,18 @@ import RootLayout from "./RootLayout.astro";
 
 type Props = {
   title?: string;
-  imageReference?: string;
+  images?: string[];
 };
 
-const { title, imageReference } = Astro.props;
+const { title, images } = Astro.props;
 ---
 
 <RootLayout title={title}>
   <h1 class="text-3xl font-bold">{title}</h1>
   {
-    imageReference && (
-      <img
-        class="h-56 w-56 bg-red-500"
-        src={imageReference}
-        alt="article-image"
-      />
-    )
+    images?.map((image) => (
+      <img class="h-56 w-56 bg-red-500" alt="article-image" src={image} />
+    ))
   }
   <slot />
 </RootLayout>

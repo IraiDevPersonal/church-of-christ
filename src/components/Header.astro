@@ -1,22 +1,36 @@
 ---
-import NavList from "@components/NavList.astro";
-import NavMenu from "./NavMenu.astro";
+import { Icon } from "astro-icon/components";
+import { LINKS } from "src/libs/const";
+import NavLink from "./NavLink.astro";
 ---
 
-<header
-  class="bg-neutral-950 text-neutral-50 h-16 flex items-center px-4 justify-between"
->
-  <div class="flex items-center gap-4">
-    <span
-      class="rounded-xl h-10 min-w-10 grid place-content-center text-2xl font-bold italic bg-neutral-50 text-neutral-900"
-    >
-      I
-    </span>
-    <span class="text-xl font-bold md:hidden">LIC</span>
-    <span class="text-xl font-bold hidden md:inline">La Iglesia de Cristo</span>
-  </div>
-  <div>
-    <NavList />
-    <NavMenu />
+<header>
+  <div
+    class="container h-16 md:h-32 flex items-center justify-between transition-[height]"
+  >
+    <div class="flex items-center gap-4">
+      <span
+        class="rounded-xl h-10 min-w-10 grid place-content-center text-2xl font-bold italic bg-neutral-50 text-neutral-900"
+      >
+        I
+      </span>
+      <span class="text-xl font-bold md:hidden">LIC</span>
+      <span class="text-xl font-bold hidden md:inline"
+        >La Iglesia de Cristo</span
+      >
+    </div>
+
+    <div>
+      <nav class="hidden md:flex">
+        {LINKS.map(({ to, label }) => <NavLink href={to}>{label}</NavLink>)}
+      </nav>
+
+      <button
+        id="open-menu-btn"
+        class="hover:bg-neutral-200 transition-colors p-1.5 rounded-md cursor-pointer md:hidden"
+      >
+        <Icon name="menu-icon" size={24} />
+      </button>
+    </div>
   </div>
 </header>
