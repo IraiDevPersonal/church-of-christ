@@ -1,0 +1,24 @@
+---
+import { LINKS } from "@libs/const";
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="hidden md:flex">
+  {
+    LINKS.map(({ href, label }) => (
+      <a
+        href={href}
+        class="relative w-full md:w-max px-4 inline-block py-2 rounded-md hover:bg-neutral-200 transition-colors font-semibold"
+      >
+        {label}
+        {currentPath === href && (
+          <span
+            transition:name="nav-item"
+            class="absolute left-0 top-0 md:top-auto md:bottom-0 md:left-1/2 -translate-x-1/2 bg-neutral-800 inline-block h-full w-1 md:h-1 md:w-1/3 rounded-full"
+          />
+        )}
+      </a>
+    ))
+  }
+</nav>

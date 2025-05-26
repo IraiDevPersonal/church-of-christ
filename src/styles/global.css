@@ -3,3 +3,7 @@
 .container {
   @apply max-w-3xl mx-auto p-4 md:px-0;
 }
+
+@view-transition {
+  navigation: auto;
+}

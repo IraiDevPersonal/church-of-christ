@@ -1,5 +1,5 @@
 export const LINKS = [
-  { to: "/", label: "Artículos" },
-  { to: "/musica", label: "Música" },
-  { to: "/favosobre-nosotrosrites", label: "Sobre Nosotros" },
+  { href: "/", label: "Artículos" },
+  { href: "/musica", label: "Música" },
+  { href: "/favosobre-nosotrosrites", label: "Sobre Nosotros" },
 ];

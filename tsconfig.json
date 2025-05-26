@@ -22,11 +22,8 @@
       "@styles/*": [
         "src/styles/*"
       ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@scripts/*": [
-        "src/scripts/*"
+      "@libs/*": [
+        "src/libs/*"
       ]
     }
   }
