@@ -29,25 +29,31 @@ const currentPath = Astro.url.pathname;
     </button>
   </div>
 
-  <ul class="gap-y-4 grow-[1] flex flex-col justify-center items-center">
+  <ul class="gap-y-8 grow-[1] flex flex-col justify-center items-center">
     {
-      LINKS.map(({ href, label }) => (
-        <li>
-          <a
-            href={href}
-            class="relative text-3xl inline-block p-2 pb-3 not-hover:opacity-40 font-semibold transition-[opacity] leading-0"
-          >
-            {label}
-            {currentPath === href && (
-              <Icon
-                size={40}
-                name="right-arrow-icon"
-                class="absolute top-1/2 -left-8 -translate-y-1/2"
-              />
-            )}
-          </a>
-        </li>
-      ))
+      LINKS.map(({ href, label }) => {
+        const isActive = currentPath === href;
+        return (
+          <li>
+            <a
+              href={href}
+              class:list={[
+                "relative text-3xl inline-block p-2 pb-3 hover:opacity-100 font-semibold transition-[opacity] leading-0",
+                !isActive && "opacity-55",
+              ]}
+            >
+              {label}
+              {isActive && (
+                <Icon
+                  size={40}
+                  name="right-arrow-icon"
+                  class="absolute top-1/2 -left-8 -translate-y-1/2"
+                />
+              )}
+            </a>
+          </li>
+        );
+      })
     }
   </ul>
 </div>
