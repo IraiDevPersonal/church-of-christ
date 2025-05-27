@@ -1,0 +1,44 @@
+---
+import Title from "@components/Title.astro";
+import RootLayout from "@layouts/RootLayout.astro";
+import SectionCard from "./components/SectionCard.astro";
+---
+
+<RootLayout>
+  <div class="space-y-8">
+    <article class="text-justify leading-relaxed sm:text-lg">
+      <p class="article-first-letter first-letter:text-neutral-600">
+        Este sitio web está diseñado y dirigido a personas que comparten la fe
+        cristiana, es decir a la Iglesia de Cristo. Su propósito es proporcionar
+        material de apoyo para el estudio de las Escrituras, con un énfasis
+        especial en las doctrinas fundamentales que constituyen el cimiento de
+        nuestra fe, así como también en doctrinas de segundo y tercer orden.
+      </p>
+      <p>
+        Buscamos centralizar recursos que actualmente se encuentran dispersos en
+        diferentes sitios de internet, con el objetivo de facilitar su acceso a
+        quienes desean profundizar en el conocimiento bíblico. Aunque este
+        material ya existe, muchas veces resulta difícil encontrarlo. Por ello,
+        este sitio procura reunirlo en un solo lugar.
+      </p>
+      <p>
+        Es importante destacar que todo el contenido compartido estará
+        <strong class="italic font-bold"
+          >"firmemente guiado por la autoridad e infalibilidad de las
+          Escrituras, uno de los pilares fundamentales del cristianismo.
+          Reconocemos, además, que el Maestro por excelencia es el Espíritu
+          Santo, quien guía a los creyentes en toda verdad."</strong
+        >
+      </p>
+    </article>
+
+    <Title>Categoria de Estudios</Title>
+
+    <section class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
+      <SectionCard>Fundamentos</SectionCard>
+      <SectionCard>Otras Categorias</SectionCard>
+      <SectionCard>Otras Categorias</SectionCard>
+      <SectionCard>Otras Categorias</SectionCard>
+    </section>
+  </div>
+</RootLayout>

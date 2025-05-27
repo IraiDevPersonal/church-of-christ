@@ -14,13 +14,16 @@
         "src/components/*"
       ],
       "@layouts/*": [
-        "src/layouts/*"
+        "src/components/layouts/*"
       ],
       "@pages/*": [
         "src/pages/*"
       ],
       "@styles/*": [
         "src/styles/*"
+      ],
+      "@modules/*": [
+        "src/modules/*"
       ],
       "@libs/*": [
         "src/libs/*"

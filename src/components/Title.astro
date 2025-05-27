@@ -1,0 +1,18 @@
+---
+type Props = {
+  className?: string;
+  uppercase?: boolean;
+};
+
+const { className, uppercase = false } = Astro.props;
+---
+
+<h1
+  class:list={[
+    "text-2xl md:text-4xl font-bold first-letter:uppercase",
+    className,
+    uppercase && "uppercase!",
+  ]}
+>
+  <slot />
+</h1>

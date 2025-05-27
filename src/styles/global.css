@@ -4,6 +4,14 @@
   @apply max-w-3xl mx-auto p-4 md:px-0;
 }
 
+.article-first-letter {
+  @apply first-letter:text-7xl first-letter:font-bold first-letter:float-left first-letter:leading-[3.25rem] first-letter:mr-0.5 first-letter:-ml-1;
+}
+
 @view-transition {
   navigation: auto;
+}
+
+@theme {
+  --breakpoint-xs: 33rem;
 }

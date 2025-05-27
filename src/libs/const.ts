@@ -1,5 +1,6 @@
 export const LINKS = [
-  { href: "/", label: "Artículos" },
+  { href: "/", label: "Inicio" },
+  { href: "/articulos", label: "Artículos" },
   { href: "/musica", label: "Música" },
-  { href: "/favosobre-nosotrosrites", label: "Sobre Nosotros" },
+  { href: "/sobre-nosotros", label: "Sobre Nosotros" },
 ];

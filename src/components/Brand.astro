@@ -1,13 +1,15 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
 
-<div class="flex items-center gap-4">
-  <span
-    class="rounded-xl h-10 min-w-10 grid place-content-center text-2xl font-bold italic bg-neutral-950 text-neutral-50"
+<a class="flex items-center gap-4" href="/">
+  <div
+    class="rounded-xl h-10 min-w-10 grid place-content-center text-2xl font-bold italic bg-amber-200/40 text-amber-800 border-2 border-amber-800"
   >
-    I
-  </span>
-  <span class="text-xl font-bold md:hidden">LIC</span>
+    <Icon name="christian-icon" size={28} />
+  </div>
+  <span class="text-xl font-bold md:hidden" title="La Iglesia de Cristo"
+    >LIC</span
+  >
   <span class="text-xl font-bold hidden md:inline">La Iglesia de Cristo</span>
-</div>
+</a>
