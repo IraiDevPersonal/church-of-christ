@@ -14,11 +14,11 @@ const { imageSrc = "piedra-angular.png", className } = Astro.props;
   <div
     class:list={[
       "h-full w-full bg-black/50 p-2 grid place-content-center",
-      "font-bold text-neutral-50 text-3xl",
+      "font-semibold text-neutral-50 text-2xl",
       className,
     ]}
   >
-    <h3 class="first-letter:uppercase underline underline-offset-8">
+    <h3>
       <slot />
     </h3>
   </div>
